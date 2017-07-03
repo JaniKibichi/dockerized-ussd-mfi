@@ -13,6 +13,7 @@ services:
     build: "."
     command: "/usr/bin/hhvm -m server -p 6500"
     depends_on: 
+      - db    
     ports: 
       - "6500:6500"
     restart: always
