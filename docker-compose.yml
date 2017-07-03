@@ -3,6 +3,11 @@ services:
   db: 
     build: "./Database/"
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_DATABASE: ussd
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ''    
 
   ussd: 
     build: "."
