@@ -13,27 +13,30 @@
 | Buy Airtime                                  |  
 
 ## Prerequisites
-- Pull/download the image from docker hub:
+#### Build The Image
+- From: `https://github.com/JaniKibichi/dockerized-ussd-mfi`
+- Build the image yourname/yourimagename by executing  the following command on the docker-playsms folder:
+	`docker build -t yourname/yourimagename .`
+- Push your new image to the docker hub:
+	`docker push yourname/yourimagename`
 
+#### Using the Image
+- Either -> Pull/download your image from docker hub:
+	`docker pull yourUsername/yourImage`
+- Or -> Pull/download my image from docker hub:
 	`docker pull grahamingokho/ussdafricastalking`
-
 - Run this for installation, just the first time:
-
-	`docker run -d \`
-	`--name yourAppName \`
-	`-e AT_APIKEY=yourAPIKey \`
-	`-e AT_USERNAME=yourUserName \`
-	`-e AT_SMSCODE=yourShortCode \`
-	`-e AT_NUMBER=yourVirtualNumber \`
-	`-e AT_PRODUCTNAME=yourMpesaProduct \`
+	`docker run -d `
+	`--name yourAppName `
+	`-e AT_APIKEY=yourAPIKey `
+	`-e AT_USERNAME=yourUserName `
+	`-e AT_SMSCODE=yourShortCode `
+	`-e AT_NUMBER=yourVirtualNumber `
+	`-e AT_PRODUCTNAME=yourMpesaProduct `
 	`-p 6500:6500 grahamingokho/ussdafricastalking`
-
 - Get `<CONTAINER_ID>` of your image:
-
 	`docker ps -l`
-
 - Follow logs:
-
 	`docker logs -f <CONTAINER_ID>`
 
 
@@ -104,7 +107,5 @@ This USSD application has the following user journey.
 - The application checks if the user is registered or not. If the user is registered, the services menu is served which allows the user to: receive SMS, receive a call with an IVR menu.
 
 - In case the user is not registered, the application prompts the user for their name and city (with validations), before successfully serving the services menu.
-
-
 
 - That is basically our application! Happy coding!
