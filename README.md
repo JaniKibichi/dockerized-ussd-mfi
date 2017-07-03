@@ -26,13 +26,15 @@
 - Or -> Pull/download my image from docker hub:
 	`docker pull grahamingokho/ussdafricastalking`
 - Run this for installation, just the first time:
-	`docker-compose run`
+	`docker-compose run -d`
+	`--name ussdmfi `
 	`-e AT_APIKEY=yourAPIKey `
 	`-e AT_USERNAME=yourUserName `
 	`-e AT_SMSCODE=yourShortCode `
 	`-e AT_NUMBER=yourVirtualNumber `
 	`-e AT_PRODUCTNAME=yourMpesaProduct `
-	
+	`-p 6500:6500 `
+
 - Get `<CONTAINER_ID>` of your image:
 	`docker ps -l`
 - Follow logs:
