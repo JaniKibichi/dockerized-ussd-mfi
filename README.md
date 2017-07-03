@@ -26,14 +26,13 @@
 - Or -> Pull/download my image from docker hub:
 	`docker pull grahamingokho/ussdafricastalking`
 - Run this for installation, just the first time:
-	`docker run -d `
-	`--name yourAppName `
+	`docker-compose run`
 	`-e AT_APIKEY=yourAPIKey `
 	`-e AT_USERNAME=yourUserName `
 	`-e AT_SMSCODE=yourShortCode `
 	`-e AT_NUMBER=yourVirtualNumber `
 	`-e AT_PRODUCTNAME=yourMpesaProduct `
-	`-p 6500:6500 grahamingokho/ussdafricastalking`
+	
 - Get `<CONTAINER_ID>` of your image:
 	`docker ps -l`
 - Follow logs:
@@ -50,7 +49,10 @@
  `http://<your ip address>:6500/microfinanceUSSD.php`
 
 
-- Finally, this application works with a connection to a MYSQL database. Create a database with a name, username and password of your choice. Also create a session_levels table and a users table. These details are configured in the dbConnector.php and this is required in the main application script microfinanceUSSD.php.
+- Finally, this application works with a connection to a MYSQL database. 
+
+## The Database
+#### This is a service on docker-compose
 
 mysql> describe microfinance;
 
