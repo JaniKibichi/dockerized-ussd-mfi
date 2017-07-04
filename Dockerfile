@@ -13,7 +13,10 @@ RUN apt-get update && apt-get -y install hhvm && apt-get -y install nano && apt-
 RUN service cron start
 
 #append cronjob to end of file
-RUN sed '$ a > * * * * * /usr/bin/hhvm /ussd/crontab.php ' /etc/crontab
+RUN crontab -l > mycron
+RUN echo "* * * * * /usr/bin/hhvm /ussd/crontab.php" >> mycron
+RUN crontab mycron
+RUN rm mycron 
 
 #Install composer for other way to manage db later
 
@@ -30,4 +33,7 @@ RUN touch /var/log/hhvm/hhvm.log
 
 #Make changes to the file hhvm.log
 RUN sed -i -e 's/hhvm.log.use_log_file = false/hhvm.log.use_log_file = true/g' /etc/hhvm/server.ini
-RUN sed '/hhvm.log.use_log_file = true/ a hhvm.log.file = /var/log/hhvm/hhvm.log' /etc/hhvm/server.ini
+RUN sed -i -e 's/hhvm.log.use_syslog = true/hhvm.log.use_syslog = true\n\n/var/log/hhvm/hhvm.log/g' /etc/hhvm/server.ini
+
+
+
