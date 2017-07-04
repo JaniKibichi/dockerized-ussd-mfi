@@ -1,19 +1,23 @@
 version: "2"
 services: 
   db: 
-    build: "./Database/"
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ''
       MYSQL_DATABASE: ussd
       MYSQL_USER: root
-      MYSQL_PASSWORD: ''    
+      MYSQL_PASSWORD: ''  
+    build: "./Database/"
+    restart: always        
 
   ussd: 
     build: "."
     command: "/usr/bin/hhvm -m server -p 6500"
     depends_on: 
-      - db    
+      - db  
+    environment:  
+      USSD_DB_HOST: "db:3306"
+      USSD_DB_PASSWORD: ussd
+      USSD_DB_USER: ussd
     ports: 
       - "6500:6500"
     restart: always
