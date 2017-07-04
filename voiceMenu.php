@@ -14,7 +14,7 @@
         $response  = '<?xml version="1.0" encoding="UTF-8"?>';
         $response .= '<Response>';
         $response .= '<Say>Please hold while we connect you to Sales.</Say>';     
-        $response .= '<Dial phoneNumbers="880.welovenerds@ke.sip.africastalking.com" ringbackTone="http://62.12.117.25:8010/media/SautiFinaleMoney.mp3"/>';
+        $response .= '<Dial phoneNumbers="".$tocall."" ringbackTone="".$ringback.""/>';
         $response .= '</Response>';
          
         // Print the response onto the page so that our gateway can read it
@@ -26,7 +26,7 @@
         $response  = '<?xml version="1.0" encoding="UTF-8"?>';
         $response .= '<Response>';
         $response .= '<Say>Please hold while we connect you to Support.</Say>';     
-        $response .= '<Dial phoneNumbers="880.welovenerds@ke.sip.africastalking.com" ringbackTone="http://62.12.117.25:8010/media/SautiFinaleMoney.mp3"/>';
+        $response .= '<Dial phoneNumbers="".$tocall."" ringbackTone="".$ringback.""/>';
         $response .= '</Response>';
          
         // Print the response onto the page so that our gateway can read it
@@ -37,7 +37,7 @@
           //2d. Redirect to the main IVR...
         $response  = '<?xml version="1.0" encoding="UTF-8"?>';
         $response .= '<Response>';
-        $response .= '<Redirect>http://62.12.117.25/MF-Ussd-Live/voiceCall.php</Redirect>';
+        $response .= '<Redirect>"".$voicecallurl.""</Redirect>';
         $response .= '</Response>';
 
         // Print the response onto the page so that our gateway can read it
@@ -49,7 +49,7 @@
       $response  = '<?xml version="1.0" encoding="UTF-8"?>';
       $response .= '<Response>';
       $response .= '<Say>Please hold while we connect you to Support.</Say>';     
-      $response .= '<Dial phoneNumbers="880.welovenerds@ke.sip.africastalking.com" ringbackTone="http://62.12.117.25:8010/media/SautiFinaleMoney.mp3"/>';
+      $response .= '<Dial phoneNumbers="".$tocall."" ringbackTone="".$ringback.""/>';
       $response .= '</Response>';
        
       // Print the response onto the page so that our gateway can read it
@@ -68,9 +68,10 @@
       $callStartTime=$_POST['callStartTime'];
       $isActive=$_POST['isActive'];
       $currencyCode=$_POST['currencyCode'];
-    $status=$_POST['status'];
+      $status=$_POST['status'];
 
     //3a. Store the data, write your SQL statements here...
+    
   }
 
 ?>

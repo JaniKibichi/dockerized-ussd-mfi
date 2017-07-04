@@ -29,7 +29,7 @@ CREATE TABLE checkout(
   id  int(6) NOT NULL,
   phonenumber varchar(20), 
   status varchar(30),   
-  amount int(11);
+  amount int(11),
   reg_date timestamp DEFAULT CURRENT_TIMESTAMP,   
   PRIMARY KEY (id)
 );

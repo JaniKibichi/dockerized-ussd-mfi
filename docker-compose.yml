@@ -18,6 +18,15 @@ services:
       USSD_DB_HOST: "db:3306"
       USSD_DB_PASSWORD: ussd
       USSD_DB_USER: ussd
+      RINGBACKTONE: yourtone
+      VOICE_CALLURL: yoururl
+      VOICE_MENUURL: yoururl
+      AT_APIKEY: yourphone
+      AT_USERNAME: yourapiusername
+      AT_NUMBER: youratnumber 
+      AT_SMSCODE: yoursmscode 
+      AT_PRODUCTNAME: yourproductname
+      CALLNUMBERS: thenumbers     
     ports: 
       - "6500:6500"
     restart: always
