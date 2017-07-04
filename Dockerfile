@@ -11,6 +11,7 @@ RUN apt-get update && apt-get -y install hhvm && apt-get -y install nano && apt-
 
 #fire up crontab
 RUN service cron start
+RUN set +e
 
 #append cronjob to end of file
 RUN crontab -l > mycron
