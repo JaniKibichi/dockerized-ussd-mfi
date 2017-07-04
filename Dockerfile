@@ -11,13 +11,10 @@ RUN apt-get update && apt-get -y install hhvm && apt-get -y install nano && apt-
 
 #fire up crontab
 RUN service cron start
-RUN set +e
-
-#append cronjob to end of file
-RUN crontab -l > mycron
-RUN echo "* * * * * /usr/bin/hhvm /ussd/crontab.php" >> mycron
-RUN crontab mycron
-RUN rm mycron 
+RUN touch mysql-cron
+RUN echo "* * * * * /usr/bin/hhvm /ussd/crontab.php" >> mysql-cron
+COPY mysql-cron /etc/cron.d/mysql-cron
+RUN crontab /etc/cron.d/mysql-cron
 
 #Install composer for other way to manage db later
 
