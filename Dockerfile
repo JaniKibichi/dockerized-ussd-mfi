@@ -31,7 +31,7 @@ RUN touch /var/log/hhvm/hhvm.log
 
 #Make changes to the file hhvm.log
 RUN sed -i -e 's/hhvm.log.use_log_file = false/hhvm.log.use_log_file = true/g' /etc/hhvm/server.ini
-RUN sed -i -e 's/; hhvm specific/hhvm.log.file = /var/log/hhvm/hhvm.log/g' /etc/hhvm/server.ini
+RUN sed -i -e '$ahhvm.log.file = /var/log/hhvm/hhvm.log' /etc/hhvm/server.ini
 
 
 
