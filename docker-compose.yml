@@ -2,10 +2,10 @@ version: "2"
 services: 
   db: 
     environment:
-      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: ussd
       MYSQL_DATABASE: ussd
       MYSQL_USER: root
-      MYSQL_PASSWORD: ''  
+      MYSQL_PASSWORD: ussd  
     build: "./Database/"
     restart: always        
 
