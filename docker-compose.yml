@@ -7,6 +7,8 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: ussd  
     build: "./Database/"
+    ports: 
+      - "6501:3306"    
     restart: always        
 
   ussd: 
@@ -21,12 +23,12 @@ services:
       RINGBACKTONE: yourtone
       VOICE_CALLURL: yoururl
       VOICE_MENUURL: yoururl
-      AT_APIKEY: yourphone
+      AT_APIKEY: yourapikey
       AT_USERNAME: yourapiusername
       AT_NUMBER: youratnumber 
       AT_SMSCODE: yoursmscode 
       AT_PRODUCTNAME: yourproductname
-      CALLNUMBERS: thenumbers     
+      CALLNUMBERS: thenumberstocall     
     ports: 
       - "6500:6500"
     restart: always

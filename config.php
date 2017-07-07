@@ -10,5 +10,9 @@ $ringback = getenv("RINGBACKTONE");
 $voicecallurl = getenv("VOICE_CALLURL");
 $tocall = getenv("CALLNUMBERS");
 $voicemenuurl = getenv("VOICE_MENUURL");
+$mysqlRoot = getenv("MYSQL_ROOT_PASSWORD");
+$mysqlDB = getenv("MYSQL_DATABASE");
+$mysqlUser = getenv("MYSQL_USER");
+$mysqlPass = getenv("MYSQL_PASSWORD"); 
 
 ?>

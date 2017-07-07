@@ -1,10 +1,11 @@
 <?php 
 //theUssdDb.php
+require_once('config.php');
 //Connection Credentials
 $servername = 'localhost';
-$username = 'root';
-$password = "";
-$database = "ussd";
+$username = $mysqlUser;
+$password = $mysqlPass;
+$database = $mysqlDB;
 $dbport = 3306;
 
 
